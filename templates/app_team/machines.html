@@ -1,0 +1,72 @@
+{% extends 'team_home.html' %}
+
+{% block content %}
+
+<head>
+    <title>Falcon C2 | Control Machine</title>
+</head>
+
+<div class="content">
+    <div class="d-flex align-items-center container content-header">
+        <i class="bx bx-desktop content-icon"></i>
+        <span class="content-title">
+            Machines:
+            <span style="color: var(--primary-color);">{{machine_id}}</span>
+        </span>
+    </div>
+    <div class="container content-body">
+        <div class="card">
+            <div class="card-body">
+                {% if machine_id != 'All' %}
+                <form id="terminal-input-form" action="" method="POST">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <div class="input-group-text">
+                            <i class="bx bx-terminal"></i>
+                        </div>
+                        <input type="hidden" name="machine_id" value="{{machine_id}}">
+                        <input type="text" class="form-control" id="input-command" name="command"
+                            placeholder="Enter command to execute . . .">
+                    </div>
+                </form>
+                {% endif %}
+                <table class="table table-dark table-hover" id="machines">
+                    <thead class="thead">
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Machine ID</th>
+                            <th>Command</th>
+                            <th>Output</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for d in data %}
+                        <tr>
+                            <td>{{d.timestamp|date:"F j, Y, g:i A" }}</td>
+                            <td>{{d.machine_id}}</td>
+                            <td>{{d.command}}</td>
+                            <td>
+                                <pre>{{d.output}}</pre>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    sidebarLinkActive("link-4");
+    $(document).ready(function () {
+        $('#machines').DataTable({
+            responsive: true,
+            "order": [
+                [0, 'desc']
+            ],
+        });
+    });
+</script>
+
+{% endblock content %}

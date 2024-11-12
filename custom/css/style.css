@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Quicksand&family=Ubuntu&display=swap');
+
+:root {
+    --primary-color: #65FF65;
+    --text-color-primary: #F2F2F2;
+    --text-color-secondary: #909090;
+    --background-color-primary: #0F0F0F;
+    --background-color-secondary: #151515;
+    --background-color-tertiary: #202020;
+    --border-primary: 1px solid #808080;
+    --border-secondary: 1px solid #3F3F46;
+    --border-active: 1px solid #F2F2F2;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Sans', sans-serif;
+    background-color: var(--background-color-primary);
+}
+
+a {
+    color: var(--text-color-primary);
+}
+
+.login-wrapper {
+    height: 95vh;
+}
+
+.login-wrapper .brand {
+    margin-bottom: 3rem;
+}
+
+.login-wrapper .brand .brand-logo {
+    width: 12.5rem;
+}
+
+.login-wrapper .login {
+    padding: 1.5rem;
+    border: var(--border-primary);
+    border-radius: 0.375rem;
+}
+
+.login-wrapper .login .form-title {
+    position: absolute;
+    margin-top: -43.5px;
+    padding: 0.35rem 1.25rem;
+    font-size: 1.075rem;
+    color: var(--text-color-primary);
+    background-color: var(--background-color-primary);
+    border: var(--border-primary);
+    border-radius: 0.375rem;
+}
+
+.login-wrapper .forget-password {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.75;
+    color: var(--text-color-secondary);
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: var(--background-color-primary);
+    border-right: var(--border-secondary);
+}
+
+.sidebar .nav-links {
+    width: 235px;
+    padding: 1rem 1.25rem;
+    background-color: var(--background-color-primary);
+}
+
+.sidebar .nav-links .brand-logo {
+    height: 1.1rem;
+    padding: 0 0.25rem;
+}
+
+.sidebar .nav-links .menu-icon {
+    margin-right: -5px;
+    font-size: 2rem;
+    color: var(--text-color-primary);
+    cursor: pointer;
+}
+
+.sidebar .nav-links .nav-item .profile {
+    padding: 1.5rem 0;
+    background-color: var(--background-color-primary);
+}
+
+.sidebar .nav-links .nav-item .profile .profile-image {
+    width: 90px;
+    height: 90px;
+    padding: 0.5rem;
+    border: 1.5px solid var(--primary-color);
+    border-radius: 50%;
+}
+
+.sidebar .nav-links .nav-item .profile .profile-name {
+    margin-top: 1rem;
+    padding: 0.25rem 0.75rem;
+    text-align: center;
+    color: var(--text-color-primary);
+    background-color: var(--background-color-tertiary);
+    border-radius: 0.375rem;
+    border: var(--border-primary);
+}
+
+.sidebar .nav-links .nav-item {
+    margin: 0.75rem 0;
+    border-radius: 0.375rem;
+    list-style: none;
+}
+
+.sidebar .nav-links .nav-item:hover {
+    background-color: var(--background-color-tertiary);
+    cursor: pointer;
+}
+
+.sidebar .nav-links .nav-item .nav-icon {
+    padding: 0.75rem;
+    font-size: 1.35rem;
+    color: var(--text-color-secondary);
+}
+
+.sidebar .nav-links .nav-item .nav-text {
+    font-size: 1.075rem;
+    color: var(--text-color-secondary);
+    text-decoration: none;
+}
+
+.sidebar .nav-links .nav-item:hover .nav-icon,
+.sidebar .nav-links .nav-item:hover .nav-text {
+    color: var(--text-color-primary);
+}
+
+.sidebar .nav-links .active {
+    background-color: var(--primary-color) !important;
+}
+
+.sidebar .nav-links .active .nav-icon,
+.sidebar .nav-links .active .nav-text,
+.sidebar .nav-links .active:hover .nav-icon,
+.sidebar .nav-links .active:hover .nav-text {
+    color: unset;
+}
+
+.sidebar .minimal {
+    width: auto;
+    padding: 1rem;
+}
+
+.sidebar .minimal .nav-header {
+    justify-content: center !important;
+}
+
+.sidebar .minimal .brand-logo {
+    display: none;
+}
+
+.sidebar .minimal .menu-icon {
+    margin-right: 0;
+}
+
+.sidebar .minimal .nav-item .profile {
+    margin-top: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding: 0;
+}
+
+.sidebar .minimal .nav-item .profile .profile-image {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    border: none;
+}
+
+.sidebar .minimal .nav-item .profile .profile-name {
+    display: none;
+}
+
+.sidebar .minimal .nav-text {
+    display: none;
+}
+
+.content {
+    width: 100%;
+    height: 100vh;
+}
+
+.content .content-header {
+    font-size: 1.5rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--text-color-primary);
+    border-bottom: var(--border-secondary);
+}
+
+.content .content-header .content-icon {
+    margin-right: 0.75rem;
+}
+
+.content .content-body .card {
+    margin-top: 1rem;
+}
+
+.content .content-body .card .card-body {
+    padding: 1.5rem 1.5rem 0.75rem 1.5rem;
+}
+
+.content .content-body .card .card-body .table {
+    margin: 0.25rem 0 1.25rem 0 !important;
+    width: 100% !important;
+}
+
+.content .content-body .card .card-body .table-controls {
+    margin-bottom: 1rem;
+}
+
+.content .content-body .card .card-body .table-controls .btn-minimal {
+    margin: 0;
+    margin-right: 0.5rem;
+}
+
+
+#terminal-input-form {
+    margin-bottom: 2rem;
+}
+
+#terminal-input-form .input-group {
+    margin: 0.5rem 0;
+}
+
+#terminal-input-form .bx-terminal {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 475px) {
+    .login-wrapper {
+        height: 90vh;
+    }
+}

@@ -1,0 +1,57 @@
+{% extends 'team_home.html' %}
+
+{% block content %}
+
+<head>
+    <title>Falcon C2 | Connections</title>
+</head>
+
+<div class="content">
+    <div class="d-flex align-items-center container content-header">
+        <i class="bx bx-planet content-icon"></i>
+        <span class="content-title">
+            Connections:
+            <span style="color: var(--primary-color);">{{listener_id}}</span>
+        </span>
+    </div>
+    <div class="container content-body">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-dark table-hover" id="view-connections">
+                    <thead class="thead">
+                        <tr>
+                            <th>Machine ID</th>
+                            <th>Machine Name</th>
+                            <th>Machine Type</th>
+                            <th>IP Address</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for d in data %}
+                        <tr>
+                            <td><a class="column-data"
+                                    href="{% url 'machines-machine-id' d.machine_id %}">{{d.machine_id}}</a></td>
+                            <td>{{d.machine_name}}</td>
+                            <td>{{d.machine_type}}</td>
+                            <td>{{d.ip_address}}</td>
+                            <td>{{d.timestamp|date:"F j, Y, g:i A" }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    sidebarLinkActive("link-3");
+    $(document).ready(function () {
+        $('#view-connections').DataTable({
+            responsive: true,
+        });
+    });
+</script>
+
+{% endblock content %}
